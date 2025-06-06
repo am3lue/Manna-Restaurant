@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manna Restaurant - Arusha, Tanzania</title>
+    <link rel="stylesheet" href="css/manna/welcome.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="door-preloader" id="doorPreloader">
+        <div class="door left-door"></div>
+        <div class="door right-door"></div>
+    </div>
+
+    <div class="main-content" id="mainContent">
+        <header class="hero-section" id="heroSection">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="restaurant-logo">Manna Restaurant</h1>
+                <p class="tagline">Experience the Flavors of Arusha</p>
+                <button id="mainActionButton" class="action-button"></button>
+            </div>
+        </header>
+
+        <section class="about-us radial-gradient-bg">
+            <div class="container">
+                <h2>Our Story</h2>
+                <p>Welcome to Manna Restaurant, where culinary excellence meets the vibrant spirit of Arusha, Tanzania. We blend traditional Tanzanian ingredients with international flavors to create an unforgettable dining experience.</p>
+                <div class="highlight-cards">
+                    <div class="card card-left">
+                        <h3>Fresh Ingredients</h3>
+                        <p>Sourced daily from local farms, ensuring the highest quality in every dish.</p>
+                    </div>
+                    <div class="card card-middle">
+                        <h3>Authentic Flavors</h3>
+                        <p>A true taste of Tanzania, prepared with passion and traditional techniques.</p>
+                    </div>
+                    <div class="card card-right">
+                        <h3>Warm Ambiance</h3>
+                        <p>A cozy and inviting atmosphere perfect for families, friends, and special occasions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials radial-gradient-bg">
+            <div class="container">
+                <h2>What Our Guests Say</h2>
+                <div class="testimonial-cards">
+                    <div class="card testimonial-card-left">
+                        <p>"Manna Restaurant is a hidden gem! The food was incredible, and the service was impeccable."</p>
+                        <p><strong>- John D.</strong></p>
+                    </div>
+                    <div class="card testimonial-card-middle">
+                        <p>"A must-visit in Arusha. Their local dishes are divine, and the atmosphere is so welcoming."</p>
+                        <p><strong>- Aisha K.</strong></p>
+                    </div>
+                    <div class="card testimonial-card-right">
+                        <p>"Loved the dynamic menu and the cozy setup. Will definitely be coming back!"</p>
+                        <p><strong>- Sarah T.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="recommendations radial-gradient-bg">
+            <div class="container">
+                <h2>Chef's Recommendations</h2>
+                <div class="recommendation-cards">
+                    <div class="card recommendation-card-left">
+                        <h3>Nyama Choma Special</h3>
+                        <p>Succulent grilled meat, a Tanzanian classic, served with fresh kachumbari.</p>
+                    </div>
+                    <div class="card recommendation-card-middle">
+                        <h3>Tropical Fruit Platter</h3>
+                        <p>A refreshing assortment of seasonal fruits, perfect for dessert.</p>
+                    </div>
+                    <div class="card recommendation-card-right">
+                        <h3>Manna Signature Cocktail</h3>
+                        <p>Our unique blend of local spirits and fresh juices, a true taste of Arusha.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-us radial-gradient-bg">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <p>Located in the heart of Arusha, Tanzania. Come visit us!</p>
+                <p><strong>Phone:</strong> +255 123 456 789</p>
+                <p><strong>Email:</strong> info@mannarestaurant.com</p>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/dir/Arusha/Mana+Food+And+Bakery,+Simba+Road,+Arusha/embed?pb=!1m18!1m12!1m3!1d15933.151978253995!2d36.67759555!3d-3.38682915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1837130a08226027%3A0x868b44c4b6c3104e!2sArusha!5e0!3m2!1sen!2stz!4v1700000000000!5m2!1sen!2stz" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="personalInfoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">×</span>
+            <div class="personal-info-container">
+                <div class="logo-container-modal">
+                    <img src="manna.png" alt="Manna Logo" class="logo-modal">
+                    <p class="slogan-modal">Eat well, Feel well</p>
+                </div>
+                <div class="form-wrapper-modal">
+                    <p class="welcome-text-modal">Welcome! Please enter your information</p>
+                    <form id="personalInfoForm">
+                        <input type="text" name="firstName" placeholder="First Name" required>
+                        <input type="text" name="surname" placeholder="Surname" required>
+                        <input type="email" name="email" placeholder="Email" required>
+                        <input type="password" name="password" placeholder="Password (at least 8 characters)" minlength="8" required>
+                        <input type="text" name="username" placeholder="Username" required>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/manna/welcome.js"></script>
+</body>
+</html>

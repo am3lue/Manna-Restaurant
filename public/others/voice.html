@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voice Recognition App</title>
+  <link rel="stylesheet" type="text/css" href="css/manna/voice.css">
+</head>
+<body>
+  <button id="startButton">Start Voice Input</button>
+  <div id="output">Transcribed text will appear here...</div>
+  <ul id="itemList"></ul>
+  <script>
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    if (!SpeechRecognition) {
+      alert('Your browser does not support the Web Speech API.');
+    } else {
+      const recognition = new SpeechRecognition();
+      recognition.lang = 'en-US';
+      recognition.continuous = false;
+      recognition.interimResults = true;
+
+      const startButton = document.getElementById('startButton');
+      const outputDiv = document.getElementById('output');
+      const itemList = document.getElementById('itemList');
+
+      let isListening = false;
+      startButton.addEventListener('click', () => {
+        if (isListening) {
+          recognition.stop();
+        } else {
+          recognition.start();
+        }
+      });
+
+      recognition.onstart = () => {
+        isListening = true;
+        startButton.textContent = 'Stop Listening';
+        outputDiv.textContent = 'Listening...';
+      };
+
+      recognition.onresult = (event) => {
+        const transcript = event.results[0][0].transcript.toLowerCase().trim();
+        outputDiv.textContent = transcript;
+
+        if (transcript.includes('change background to red')) {
+          document.body.style.backgroundColor = 'red';
+        } else if (transcript.includes('change background to blue')) {
+          document.body.style.backgroundColor = 'blue';
+        } else if (transcript.includes('add item')) {
+          const item = transcript.replace('add item', '').trim();
+          const listItem = document.createElement('li');
+          listItem.textContent = item;
+          itemList.appendChild(listItem);
+        }
+      };
+
+      recognition.onend = () => {
+        isListening = false;
+        startButton.textContent = 'Start Voice Input';
+      };
+
+      recognition.onerror = (event) => {
+        outputDiv.textContent = `Error: ${event.error}`;
+        console.error(`Speech recognition error: ${event.error}`);
+        recognition.stop();
+      };
+    }
+  </script>
+</body>
+</html>

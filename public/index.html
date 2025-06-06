@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manna Restaurant</title>
+     <link rel="stylesheet" href="css/manna/welcome.css">
+</head>
+<body>
+    <!-- Preloader/Door Animation -->
+    <div id="preloader">
+        <div class="door left"></div>
+        <div class="door right"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content" style="display: none;">
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="logo">Manna Restaurant</div>
+            <button id="cta-button">Order Now</button>
+        </section>
+
+        <!-- About Us / Highlights -->
+        <section id="about" class="section">
+            <h2>About Us</h2>
+            <div class="card left">Our Story</div>
+            <div class="card center">Our Mission</div>
+            <div class="card right">Our Team</div>
+        </section>
+
+        <!-- Testimonials -->
+        <section id="testimonials" class="section">
+            <h2>Testimonials</h2>
+            <div class="card left">"Delicious food!" - John</div>
+            <div class="card center">"Great service!" - Jane</div>
+            <div class="card right">"Loved it!" - Mike</div>
+        </section>
+
+        <!-- Recommendations -->
+        <section id="recommendations" class="section">
+            <h2>Recommendations</h2>
+            <div class="card left">Pancakes</div>
+            <div class="card center">Grilled Fish</div>
+            <div class="card right">Chocolate Cake</div>
+        </section>
+
+        <!-- Contact Us -->
+        <section id="contact" class="section">
+            <h2>Contact Us</h2>
+            <div id="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d36.682992685786445!3d-3.3869258975144146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18371b8c6f5d5f5b%3A0x6a7d7a6f5d5d5f5b!2sArusha%2C%20Tanzania!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+
+        <!-- Login/Signup Modal -->
+        <div id="modal" style="display: none;">
+            <div class="modal-content">
+                <div id="login-form">
+                    <h3>Login</h3>
+                    <input type="text" placeholder="Username">
+                    <input type="password" placeholder="Password">
+                </div>
+                <div id="signup-form">
+                    <h3>Signup</h3>
+                    <input type="text" placeholder="Username">
+                    <input type="email" placeholder="Email">
+                    <input type="password" placeholder="Password">
+                </div>
+                <button id="close-modal">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+/* Preloader */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: flex;
+}
+
+.door {
+    width: 50%;
+    height: 100%;
+    background: #2c3e50;
+    transition: transform 1s ease-in-out;
+}
+
+.left {
+    transform-origin: left;
+}
+
+.right {
+    transform-origin: right;
+}
+
+.open .left {
+    transform: translateX(-100%);
+}
+
+.open .right {
+    transform: translateX(100%);
+}
+
+/* Hero Section */
+#hero {
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.logo {
+    font-family: 'Arial', sans-serif;
+    font-size: 4em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#cta-button {
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#cta-button:hover {
+    background: #c0392b;
+}
+
+/* Sections */
+.section {
+    padding: 50px 20px;
+    background: radial-gradient(circle, #3498db, #2980b9);
+    text-align: center;
+}
+
+.section h2 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.card {
+    display: inline-block;
+    width: 30%;
+    margin: 10px;
+    padding: 20px;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card.left {
+    background: linear-gradient(to bottom right, #e74c3c, #c0392b);
+}
+
+.card.center {
+    background: linear-gradient(to bottom, #e74c3c, #c0392b);
+}
+
+.card.right {
+    background: linear-gradient(to bottom left, #e74c3c, #c0392b);
+}
+
+/* Map */
+#map iframe {
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Modal */
+#modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 90%;
+    max-width: 400px;
+}
+
+.modal-content input {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+#close-modal {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .logo {
+        font-size: 2.5em;
+    }
+
+    .card {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    #cta-button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+}
