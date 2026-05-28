@@ -1,0 +1,79 @@
+{
+  "system_weaknesses": {
+    "ui_ux": [
+      {
+        "severity": "high",
+        "category": "mobile_responsiveness",
+        "issue": "Table Overflow on KDS",
+        "description": "The Kitchen Display System (KDS) uses a grid layout that may become cluttered on small, low-end Android tablets if many items are ordered at once. The ticket cards don't have a max-height or internal scrolling for the item list, potentially pushing the 'Bump' buttons off-screen."
+      },
+      {
+        "severity": "medium",
+        "category": "accessibility",
+        "issue": "Color Contrast on Out-of-Stock",
+        "description": "The red 'Out of Stock' text on the dark slate background in the Admin and Kitchen portals might fail WCAG AAA contrast requirements, making it hard to read under harsh restaurant lighting."
+      },
+      {
+        "severity": "medium",
+        "category": "feedback",
+        "issue": "Lack of Loading Skeletons",
+        "description": "When fetching data, the UI uses a central pulsing text. For a premium feel, it should use skeleton loaders that match the shape of the menu items or tickets to reduce perceived latency on slow Tanzanian networks."
+      },
+      {
+        "severity": "low",
+        "category": "navigation",
+        "issue": "Missing 'Back to Top' on Menu",
+        "description": "If the menu grows large, customers scrolling down on mobile devices have no quick way to jump back to the category filters or search bar."
+      }
+    ],
+    "system_flow": [
+      {
+        "severity": "critical",
+        "category": "state_management",
+        "issue": "Polling Concurrency / Race Conditions",
+        "description": "The app uses 5-second short polling (setInterval) across all clients. If a Waiter and the Kitchen bump an order at the exact same time, the Turso database might receive conflicting updates. There is no optimistic locking or versioning on the orders table."
+      },
+      {
+        "severity": "high",
+        "category": "payment_flow",
+        "issue": "Lack of Real Payment Gateway",
+        "description": "The current 'M-Pesa' flow is purely a UI simulation. It relies on the Waiter/Manager trusting the customer's word. A real integration with a local payment aggregator (e.g., DPO, Selcom, or direct M-Pesa Daraja API) is required for financial security."
+      },
+      {
+        "severity": "high",
+        "category": "inventory_logic",
+        "issue": "Manual Stock Toggles Only",
+        "description": "Inventory is managed by manual 'In Stock / Out of Stock' toggles. There is no quantitative inventory tracking (e.g., 'We have 5 portions of Nyama Choma left'). If 6 people order simultaneously, the system won't stop the 6th order."
+      },
+      {
+        "severity": "medium",
+        "category": "security",
+        "issue": "Stateless Auth Hardcoding",
+        "description": "Authentication relies on hardcoded credentials in the Vercel serverless function. While fast for launch, it means passwords cannot be changed without redeploying the code, and there is no concept of individual staff sessions (e.g., knowing *which* waiter took the order)."
+      },
+      {
+        "severity": "medium",
+        "category": "error_handling",
+        "issue": "Silent API Failures",
+        "description": "If the 5-second poll fails due to a network drop, the app logs to console but doesn't prominently warn the user that they are viewing stale data. A 'Disconnected - Retrying' banner is needed."
+      }
+    ],
+    "missing_features": [
+      {
+        "category": "operational",
+        "feature": "Table Merging / Splitting Bills",
+        "description": "Customers often want to split a bill or move to a different table. The system currently assumes 1 order = 1 table = 1 payment."
+      },
+      {
+        "category": "operational",
+        "feature": "Waiter App Order Entry",
+        "description": "The current flow relies heavily on Customer QR ordering. The Waiter/Manager manual order entry is basic. Waiters need a dedicated, lightning-fast POS-style keypad interface to take orders for customers who don't use smartphones."
+      },
+      {
+        "category": "reporting",
+        "feature": "Historical Analytics",
+        "description": "The Admin dashboard only tracks 'Active' and current session sales. There is no historical reporting (e.g., 'Sales this month vs last month', or 'Most popular items on Fridays') because the API only pulls non-paid orders efficiently."
+      }
+    ]
+  }
+}

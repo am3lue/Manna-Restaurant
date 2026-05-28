@@ -1,0 +1,6 @@
+{
+  "name": "Manna Restaurant",
+  "description": "Digital ordering and management platform for Manna Restaurant in Arusha, Tanzania. Includes Customer Mobile Portal, Waiter Tablet, Kitchen Display System (KDS), and Admin Dashboard with Swahili/English support, local TZS currency, and persistent local state.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
